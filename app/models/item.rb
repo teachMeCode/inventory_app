@@ -9,4 +9,6 @@ class Item
   field :status, type: String
   field :location, type: String
   field :dt_finished, type: Date
+
+  belongs_to :user
 end
