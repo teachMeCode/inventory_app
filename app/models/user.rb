@@ -9,4 +9,7 @@ class User
   field :nm_last, type: String
 
   has_secure_password
+
+  has_many :Items
+  
 end
