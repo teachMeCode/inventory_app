@@ -1,26 +1,15 @@
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Medium</th>
-      <th>Theme</th>
-      <th>Size</th>
-      <th>Status</th>
-      <th>Location</th>
-      <th>Data Finished</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= @item.each do |i| %>
-      <tr>
-        <td><%= i.title%></td>
-        <td><%= i.medium%></td>
-        <td><%= i.theme%></td>
-        <td><%= i.size%></td>
-        <td><%= i.status%></td>
-        <td><%= i.location%></td>
-        <td><%= i.dt_finished%></td>
-      </tr>
-    <%end%> 
-  </tbody>
-</table>
+<!-- This is your edit page -->
+
+<h3>Please edit items</h3>
+
+  <%= form_for @item do |i| %>    
+    <%= i.text_field :title, placeholder: "Title" %>
+    <%= i.text_field :medium, placeholder: "Medium" %>
+    <%= i.text_field :theme, placeholder: "Theme" %>
+    <%= i.text_field :size, placeholder: "Size" %>
+    <%= i.text_field :status, placeholder: "Status"%>
+    <%= i.text_field :location, placeholder: "Location"%>
+    <%= i.text_field :dt_finished, placeholder: "Data Finished"%>
+    <%= i.submit, "Edit item "%>
+  <%end%>
+  <%= link_to 'Items', items_path%> 

@@ -2,19 +2,19 @@ class ItemsController < ApplicationController
 
   def index
     if current_user
-      @items = current_user.items.all
+      @item = current_user.items.all
     else
       redirect_to new_session_path
     end
   end
 
   def new
-    @item = Item.new
+    @item = current_user.items.new
   end
 
   def create
-    @items = Item.new(params.require(:items).permit(:title, :medium, :theme, :size, :status, :location, :dt_finished))
-    if @Item.save
+    @item = current_user.items.new(params.require(:item).permit(:title, :medium, :theme, :size, :status, :location, :dt_finished))
+    if @item.save
       redirect_to items_path
     else
       render 'new'  
@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
 
   def show
     if current_user
-      @items = current_user.items.all
+      @item = current_user.items.all
     else
       redirect_to new_session_path
     end
@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
     if current_user && current_user.id == Item.find(params[:id]).id
       @items_path = Item.find(params[:id])
     else
-      redirect_to welcome_path
+      redirect_to edit_item_path
     end
   end
 
@@ -41,6 +41,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    Item.find(params[:id]).destroy
+    redirect_to items_path
   end
   
 end #this is the end

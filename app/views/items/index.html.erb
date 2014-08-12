@@ -1,5 +1,7 @@
+<!-- This is the collection of all the items -->
 
 <h3>Here are your items:</h3>
+<%= link_to "New Item", new_item_path %>
 <table class="table">
   <thead>
     <tr>
@@ -10,10 +12,13 @@
       <th>Status</th>
       <th>Location</th>
       <th>Data Finished</th>
+      <th>Remove Item</th>
+      <th>Edit Item</th>
+
     </tr>
   </thead> 
   <tbody>
-    <% @items.each do |i| %>
+    <% @item.each do |i| %>
       <tr>
         <td><%= i.title%></td>
         <td><%= i.medium%></td>
@@ -22,7 +27,10 @@
         <td><%= i.status%></td>
         <td><%= i.location%></td>
         <td><%= i.dt_finished%></td>
+        <td><%= link_to "Delete", i, method: :delete, data: { confirm: "Are you sure you want to delete #{i.title}?"}%></td>
+        <td><%= link_to "Edit", edit_item_path(i) %></td> <!-- (i) is for the item id -->
       </tr>
-    <%end%> 
+    <%end%>
+   
   </tbody>
 </table>
