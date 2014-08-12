@@ -10,6 +10,6 @@ class User
 
   has_secure_password
 
-  has_many :Items
+  has_many :items
   
 end

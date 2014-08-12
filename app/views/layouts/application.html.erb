@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>InventoryApp</title>
+  <title>Inventory App</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  
-  <% if current_user %>
-      Welcome, <%= current_user.nm_first %>!
-      [ <%= link_to 'Logout', session_path, method: :delete %> ]
-    <% else %>
-      <%= link_to 'Sign Up', new_user_path %> /
-      <%= link_to 'Login', new_session_path %>
-    <% end %>
 
-  <%= yield %>
+<body>
+  <%= render 'layouts/nav'%>
+ 
+   <%= yield %>
+ 
+  
+ 
+   
+    
 
 </body>
 </html>

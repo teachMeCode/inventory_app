@@ -1,0 +1,28 @@
+
+<h3>Here are your items:</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Medium</th>
+      <th>Theme</th>
+      <th>Size</th>
+      <th>Status</th>
+      <th>Location</th>
+      <th>Data Finished</th>
+    </tr>
+  </thead> 
+  <tbody>
+    <% @items.each do |i| %>
+      <tr>
+        <td><%= i.title%></td>
+        <td><%= i.medium%></td>
+        <td><%= i.theme%></td>
+        <td><%= i.size%></td>
+        <td><%= i.status%></td>
+        <td><%= i.location%></td>
+        <td><%= i.dt_finished%></td>
+      </tr>
+    <%end%> 
+  </tbody>
+</table>
