@@ -1,18 +1,26 @@
  
- <div class="navbar navbar-default" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-      <!-- This is on every page and will changed in a logged in or logged out state -->
+<div class="navbar navbar-standard" role="navigation">
+  <div class="container">
+    <div class="row">
       <% if current_user %>
-        Welcome, <%= current_user.nm_first %>!
-        [ <%= link_to 'Logout', session_path, method: :delete %> ]
+        <div class="col-md-11">
+        <h4>Welcome, <%= current_user.nm_first %>!</h4>
+        </div>
+        <div class="col-md-1">
+        <div class="btn btn-default"><%= link_to 'Logout', session_path, method: :delete %></div>
+        </div> 
       <% else %>
-        <%= link_to 'Sign Up', new_user_path %> /
-        <%= link_to 'Login', new_session_path %>
+        <div class="col-md-10">
+        </div>
+        <div class="col-md-2">  
+          <div class="btn btn-default"> <%= link_to 'Sign Up', new_user_path %> </div>
+          <div class="btn btn-default"> <%= link_to 'Login', new_session_path %> </div>
+        </div>
       <% end %>
-      </div>
     </div>
-  </div>
+    <hr>
+  </div>    
+</div>
 
 
 

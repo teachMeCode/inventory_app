@@ -1,15 +1,25 @@
 <!-- This is your edit page -->
 
-<h3>Please edit items</h3>
 
-  <%= form_for @item do |i| %>    
-    <%= i.text_field :title, placeholder: "Title" %>
-    <%= i.text_field :medium, placeholder: "Medium" %>
-    <%= i.text_field :theme, placeholder: "Theme" %>
-    <%= i.text_field :size, placeholder: "Size" %>
-    <%= i.text_field :status, placeholder: "Status"%>
-    <%= i.text_field :location, placeholder: "Location"%>
-    <%= i.text_field :dt_finished, placeholder: "Data Finished"%>
-    <%= i.submit, "Edit item "%>
-  <%end%>
-  <%= link_to 'Items', items_path%> 
+<div class="container">
+  <h1>Update Items</h1>
+  <div class="row">
+    <div class="span6 offset3">
+      <%= form_for @item do |i| %>
+
+        <%= i.text_field :title, placeholder: "Title" %>
+        <%= i.text_field :medium, placeholder: "Medium" %>
+        <%= i.text_field :theme, placeholder: "Theme" %>
+        <%= i.text_field :size, placeholder: "Size" %>
+        <%= i.text_field :status, placeholder: "Status" %>
+        <%= i.text_field :location, placeholder: "Location" %>
+        <%= i.text_field :dt_finished, placeholder: "Date Finished" %>
+
+
+        <%= i.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <% end %>
+
+    
+    </div>
+  </div>
+</div>

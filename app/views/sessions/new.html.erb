@@ -1,8 +1,30 @@
 <!-- New user -->
 
-<%= form_for @user, {url: session_path} do |f| %>
-  <%= f.text_field :email, placeholder: 'Email' %><br>
-  <%= f.password_field :password, placeholder: 'Password' %><br>
-    <br>
-  <%= f.submit 'Login' %>
-<% end %>
+<div class="container">
+  <div ="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+      <h3>Hi. Please Login</h3>
+        
+          
+          
+          <%= form_for @user, {url: session_path} do |f| %>
+          
+            
+          <%= f.text_field :email, placeholder: 'Email' %>
+            
+          
+          
+          <%= f.password_field :password, placeholder: 'Password' %>
+          
+          
+          <%= f.submit 'login' %>
+          <% end %>
+          
+        </form>
+    <div class="col-md-3">
+    </div>
+    </div>
+  </div> 
+</div>

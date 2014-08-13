@@ -24,20 +24,27 @@ class ItemsController < ApplicationController
   def show
     if current_user
       @item = current_user.items.all
+      # @item = Item.find(params[:id])
     else
-      redirect_to new_session_path
+      redirect_to items_path
     end
   end
 
    def edit
-    if current_user && current_user.id == Item.find(params[:id]).id
-      @items_path = Item.find(params[:id])
+    if current_user && current_user == Item.find(params[:id]).user #use user because this refers to the _id in the User document
+      @item = Item.find(params[:id])
     else
-      redirect_to edit_item_path
+      redirect_to items_path
     end
   end
 
   def update
+    @item = Item.find(params[:id])
+    if @item.update_attributes(params.require(:item).permit(:title, :medium, :theme, :size, :status, :location, :dt_finished))
+      redirect_to items_path
+    else
+      redirect_to new_session_path
+    end
   end
 
   def destroy
