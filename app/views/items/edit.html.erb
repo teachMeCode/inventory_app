@@ -2,9 +2,67 @@
 
 
 <div class="container">
-  <h1>Update Items</h1>
   <div class="row">
-    <div class="span6 offset3">
+    <div class="col-md-12">
+      <button class="btn btn-default" style="width:67px;"> 
+        <%= link_to 'Back', items_path %>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-8">
+      <h1>You got items. Let's update them!</h1>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div> <!-- end of row -->
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <%= form_for @item do |i| %>
+      <div class="form-horizontal">
+        <div class="form-group">
+          <label>Title</label>
+          <%= i.text_field :title, class: 'form-control', placeholder: "Title" %>
+        </div>
+        <div class="form-group">
+          <label>Medium</label>
+          <%= i.text_field :medium, class: 'form-control', placeholder: "Medium" %>
+        </div>
+        <div class="form-group">
+          <label>Theme</label>
+          <%= i.text_field :theme, class: 'form-control', placeholder: "Theme" %>
+        </div>
+        <div class="form-group">
+          <label>Size</label>
+          <%= i.text_field :size, class: 'form-control', placeholder: "Size" %>
+        </div>
+        <div class="form-group">
+          <label>Status</label>
+          <%= i.text_field :status, class: 'form-control', placeholder: "Status" %>
+        </div>
+        <div class="form-group">
+          <label>Location</label>
+          <%= i.text_field :location, class: 'form-control', placeholder: "Location" %>
+        </div>
+        <div class="form-group">
+          <label>Date Finished</label>
+          <%= i.text_field :dt_finished, class: 'form-control', placeholder: "Date Finished" %>
+        </div>
+        <div class="form-group">
+          <%= i.submit "Save changes", class: "btn btn-large btn-primary" %>
+        </div>
+        <% end %>
+      </div> <!-- end of form -->
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div> <!-- end of row -->
+
+
       <%= form_for @item do |i| %>
 
         <%= i.text_field :title, placeholder: "Title" %>
@@ -18,8 +76,9 @@
 
         <%= i.submit "Save changes", class: "btn btn-large btn-primary" %>
       <% end %>
-
-    
+      </div>
+      <div class="col-md-1">
+      </div>
     </div>
   </div>
 </div>

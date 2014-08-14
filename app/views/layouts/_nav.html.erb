@@ -1,4 +1,6 @@
- 
+<!--This is the nav bar across all pages--> 
+
+
 <div class="navbar navbar-standard" role="navigation">
   <div class="container">
     <div class="row">
@@ -11,6 +13,7 @@
         </div> 
       <% else %>
         <div class="col-md-10">
+          <h5 class="lead"> <%= link_to 'Home', root_path %></h5>
         </div>
         <div class="col-md-2">  
           <div class="btn btn-default"> <%= link_to 'Sign Up', new_user_path %> </div>

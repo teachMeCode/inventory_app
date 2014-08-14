@@ -1,21 +1,22 @@
 <!-- New Item -->
 
-<h2>Please add a new item</h2>
 
-<%= form_for @item do |i|%>
+  <h2>Please add a new item</h2>
 
-  <%= i.text_field :title, placeholder: "Title"%>
-  <%= i.text_field :medium, placeholder: "Medium"%>
-  <%= i.text_field :theme, placeholder: "Theme"%>
-  <%= i.text_field :size, placeholder: "Dimensions"%>
-  <%= i.text_field :status, placeholder: "Status"%>
-  <%= i.text_field :location, placeholder: "location"%>
-  <%= i.text_field :dt_finished, placeholder: "Data Finished"%>
+  <%= form_for @item do |i|%>
 
-<%= i.submit "Add Item"%>
+    <%= i.text_field :title, placeholder: "Title"%>
+    <%= i.text_field :medium, placeholder: "Medium"%>
+    <%= i.text_field :theme, placeholder: "Theme"%>
+    <%= i.text_field :size, placeholder: "Dimensions"%>
+    <%= i.text_field :status, placeholder: "Status"%>
+    <%= i.text_field :location, placeholder: "location"%>
+    <%= i.text_field :dt_finished, placeholder: "Data Finished"%>
 
-<% end %>
+  <%= i.submit "Add Item"%>
 
-<%= link_to "Back to items:", items_path %>
+  <% end %>
+
+  <%= link_to "Back to items:", items_path %>
 
 
