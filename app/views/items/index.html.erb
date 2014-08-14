@@ -2,31 +2,36 @@
 
 <div class="container">
   <div class="row">
-        <div class="col-md-12">
-      <button class="btn btn-success"><%= link_to "New Item", new_item_path %></button>
-    </div>
     <div class="col-md-12">
-      <h3>Here are your items:</h3>
+      <button type="button" class="btn btn-default"><%= link_to "Add new Item", new_item_path %></button>
     </div>
-
   </div> 
-    <table class="table table-striped table-hover">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Medium</th>
-          <th>Theme</th>
-          <th>Size</th>
-          <th>Status</th>
-          <th>Location</th>
-          <th>Data Finished</th>
-          <th>Remove Item</th>
-          <th>Edit Item</th>
-          <th>Show Item</th>
-        </tr>
-      </thead> 
-      <tbody>
-        <% @item.each do |i| %>
+  <br>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">
+        <h4>Here is your stuff</h4>
+      </div>
+    </div> <!-- panel heading -->
+    <div class="panel-body bg-default">
+      <div class="scroll-box">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Medium</th>
+            <th>Theme</th>
+            <th>Size</th>
+            <th>Status</th>
+            <th>Location</th>
+            <th>Data Finished</th>
+            <th>Edit Item</th>
+            <th>Remove Item</th>
+          </tr>
+        </thead> 
+        
+        <tbody>
+          <% @item.each do |i| %>
           <tr>
             <td><%= i.title%></td>
             <td><%= i.medium%></td>
@@ -35,14 +40,15 @@
             <td><%= i.status%></td>
             <td><%= i.location%></td>
             <td><%= i.dt_finished%></td>
-            <td><%= link_to "Delete", i, method: :delete, data: { confirm: "Are you sure you want to delete #{i.title}?"}%></td>
             <td><%= link_to "Edit", edit_item_path(i) %></td> <!-- (i) is for the item id -->
-            <td><%= link_to "Show", item_path(i) %></td> <!-- (i) is for the item id -->
+            <td><%= link_to "Delete", i, method: :delete, data: { confirm: "Are you sure you want to delete #{i.title}?"}%></td>
           </tr>
-        <%end%>
-       
-      </tbody>
-    </table>
-   
+          <%end%>
+        </tbody> 
+        
+      </table>
+      </div> <!-- scroll -->
+    </div>   <!-- end panel body -->
+  </div> <!-- end panel -->
 </div>
 

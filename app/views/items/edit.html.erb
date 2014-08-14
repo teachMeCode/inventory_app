@@ -3,27 +3,26 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-sm-3">
       <button class="btn btn-default" style="width:67px;"> 
         <%= link_to 'Back', items_path %>
       </button>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-8">
+    <div class="col-sm-7">
       <h1>You got items. Let's update them!</h1>
     </div>
-    <div class="col-md-1">
+    <div class="col-sm-2">
     </div>
-  </div> <!-- end of row -->
+  </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-sm-12">
+      
     </div>
-    <div class="col-md-4">
-      <%= form_for @item do |i| %>
-      <div class="form-horizontal">
+  </div>
+  <div class="row">
+    <%= form_for @item do |i| %>
+    <div class="col-sm-4 col-sm-offset-2">
+      <div class="form">
         <div class="form-group">
           <label>Title</label>
           <%= i.text_field :title, class: 'form-control', placeholder: "Title" %>
@@ -40,6 +39,10 @@
           <label>Size</label>
           <%= i.text_field :size, class: 'form-control', placeholder: "Size" %>
         </div>
+      </div> <!-- end of form -->
+    </div>
+    <div class="form">
+      <div class="col-sm-4">
         <div class="form-group">
           <label>Status</label>
           <%= i.text_field :status, class: 'form-control', placeholder: "Status" %>
@@ -53,32 +56,17 @@
           <%= i.text_field :dt_finished, class: 'form-control', placeholder: "Date Finished" %>
         </div>
         <div class="form-group">
+          <div id="edit-a-link" class="btn-group pull-right">
           <%= i.submit "Save changes", class: "btn btn-large btn-primary" %>
+            
+            <button class="btn btn-primary" type="submit"><%= link_to 'Back', items_path, {:style=> 'color:white;'} %></button>
+            </div>
         </div>
-        <% end %>
+       </div> 
       </div> <!-- end of form -->
-    </div>
-    <div class="col-md-4">
-    </div>
-  </div> <!-- end of row -->
+    </div> <!-- end of row-->
+    
+    <% end %>
+  </div> <!-- end of container -->
 
 
-      <%= form_for @item do |i| %>
-
-        <%= i.text_field :title, placeholder: "Title" %>
-        <%= i.text_field :medium, placeholder: "Medium" %>
-        <%= i.text_field :theme, placeholder: "Theme" %>
-        <%= i.text_field :size, placeholder: "Size" %>
-        <%= i.text_field :status, placeholder: "Status" %>
-        <%= i.text_field :location, placeholder: "Location" %>
-        <%= i.text_field :dt_finished, placeholder: "Date Finished" %>
-
-
-        <%= i.submit "Save changes", class: "btn btn-large btn-primary" %>
-      <% end %>
-      </div>
-      <div class="col-md-1">
-      </div>
-    </div>
-  </div>
-</div>

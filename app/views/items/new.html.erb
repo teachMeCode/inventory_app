@@ -1,22 +1,51 @@
 <!-- New Item -->
 
-
-  <h2>Please add a new item</h2>
-
-  <%= form_for @item do |i|%>
-
-    <%= i.text_field :title, placeholder: "Title"%>
-    <%= i.text_field :medium, placeholder: "Medium"%>
-    <%= i.text_field :theme, placeholder: "Theme"%>
-    <%= i.text_field :size, placeholder: "Dimensions"%>
-    <%= i.text_field :status, placeholder: "Status"%>
-    <%= i.text_field :location, placeholder: "location"%>
-    <%= i.text_field :dt_finished, placeholder: "Data Finished"%>
-
-  <%= i.submit "Add Item"%>
-
-  <% end %>
-
-  <%= link_to "Back to items:", items_path %>
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <button class="btn btn-default" style="width:67px;"> 
+        <%= link_to 'Back', items_path %>
+      </button>
+    </div>
+    <div class="col-md-4">
+      <h2>Please add a new item</h2>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <div class="form">
+        <%= form_for @item do |i| %>
+         <div class="form-group">
+          <%= i.text_field :title, class: 'form-control', placeholder: "Title" %>
+         </div> 
+        <div class="form-group">
+          <%= i.text_field :medium, class: 'form-control', placeholder: "Medium" %>
+        </div>
+        <div class="form-group">
+          <%= i.text_field :theme, class: 'form-control', placeholder: "Theme" %>
+        </div>
+        <div class="form-group">
+          <%= i.text_field :size, class: 'form-control', placeholder: "Size" %>
+        </div>
+        <div class="form-group">
+          <%= i.text_field :status, class: 'form-control', placeholder: "Status" %>
+        </div>
+        <div class="form-group">
+          <%= i.text_field :location, class: 'form-control', placeholder: "Location" %>
+        </div>
+        <div class="form-group">
+          <%= i.text_field :dt_finished, class: 'form-control', placeholder: "Data Finished" %>
+        </div>
+        <%= i.submit "Save changes", class: "btn btn-large btn-primary" %>
+        <% end %>
+      </div> <!-- end of form -->
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div> <!-- end of row -->
+</div> 
+ 
