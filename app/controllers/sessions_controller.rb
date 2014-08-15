@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   # This controls the entire login process
 
   def create
-    raise params[:user].inspect
+    #raise params[:user].inspect
     user = User.where(email: params[:user][:email]).first
     # Checks to see if the user exists, and then for a matching password
     if user && user.authenticate(params[:user][:password])
