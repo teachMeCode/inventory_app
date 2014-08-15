@@ -4,6 +4,7 @@
 <div class="navbar navbar-standard" role="navigation">
   <div class="container">
     <div class="row">
+
       <% if current_user %>
         <div class="col-md-11">
         <h4>Welcome, <%= current_user.nm_first %>!</h4>
@@ -13,17 +14,29 @@
         </div> 
       <% else %>
         <div class="col-md-10">
-          <h5 class="lead"> <%= link_to 'Home', root_path %></h5>
+
+         <%= link_to root_path, class: "btn btn-default" do %>
+          <span class="glyphicon glyphicon-home"></span>
+         <% end %> 
+          
         </div>
-        <div class="col-md-2">  
-          <div class="btn btn-default"> <%= link_to 'Sign Up', new_user_path %> </div>
-          <div class="btn btn-default"> <%= link_to 'Login', new_session_path %> </div>
+        <div class="col-md-2"> 
+        <div class="dropdown">
+          <a data-toggle="dropdown" href="#">Login / Sign Up <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dlabel">
+            <li><a href="#">Things in stuff</a></li>
+          </ul>
+          </div>
         </div>
+         
+
+        
       <% end %>
-    </div>
+
+    </div> <!-- end of row -->
     <hr>
-  </div>    
-</div>
+  </div> <!-- end of container     -->
+</div> <!-- end of navbar -->
 
 
 
