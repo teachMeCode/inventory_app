@@ -15,7 +15,7 @@
       <% else %>
         <div class="col-md-10">
 
-         <%= link_to root_path, class: "btn btn-default" do %>
+         <%= link_to root_path, class: "btn btn-default pop" do %>
           <span class="glyphicon glyphicon-home"></span>
          <% end %> 
           
@@ -24,7 +24,8 @@
         <div class="dropdown">
           <a data-toggle="dropdown" href="#">Login / Sign Up <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="dlabel">
-            <li><a href="#">Things in stuff</a></li>
+            <li><a href="#"> <%= link_to 'Sign Up', new_user_path %></a></li>
+            <li><a href="#"> <%= link_to 'Login', new_session_path %></a></li>
           </ul>
           </div>
         </div>

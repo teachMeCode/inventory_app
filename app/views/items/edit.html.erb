@@ -14,6 +14,8 @@
     <div class="col-sm-2">
     </div>
   </div>
+
+  <!-- Edit Modal -->
   <div class="row">
     <div class="col-sm-12">
       <button class="btn btn-defualt" data-toggle="modal" data-target="#myModal" aria-labelledby="myModalLabel">
@@ -44,6 +46,22 @@
                 <div class="form-group">
                   <label>Size</label>
                   <%= i.text_field :size, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <label>Status</label>
+                  <%= i.text_field :status, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <label>Location</label>
+                  <%= i.text_field :location, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <label>Size</label>
+                  <%= i.text_field :size, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <label>Date Finished</label>
+                  <%= i.text_field :dt_finished, class: 'form-control' %>
                 </div>
 
                 <%end%>
