@@ -31,8 +31,9 @@ class ItemsController < ApplicationController
   end
 
    def edit
-    if current_user && current_user == Item.find(params[:id]).user #use user because this refers to the _id in the User document
+    if current_user && current_user == Item.find(params[:id]).user #use user because this refers to the _id in the User document db (mongo)
       @item = Item.find(params[:id])
+      flash[:success] = "Items have been updated"
     else
       redirect_to items_path
     end

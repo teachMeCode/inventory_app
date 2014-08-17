@@ -2,8 +2,11 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-4">
       <button type="button" class="btn btn-primary"><%= link_to "Add new Item", new_item_path, {style:"color: white;"} %></button>
+    </div>
+    <div class="col-md-8">
+      <div class="alert alert-success fade in"></div>
     </div>
   </div> 
   <br>
@@ -40,8 +43,22 @@
             <td><%= i.status%></td>
             <td><%= i.location%></td>
             <td><%= i.dt_finished%></td>
-            <td><%= link_to "Edit", edit_item_path(i) %></td> <!-- (i) is for the item id -->
-            <td><%= link_to "Delete", i, method: :delete, data: { confirm: "Are you sure you want to delete #{i.title}?"}%></td>
+            
+
+            <td>
+              
+              <button class="btn btn-success" style="width: 70px;">
+               <%= link_to "Edit", edit_item_path(i), {style:"color: white;"} %>  
+              </button>
+             
+
+            </td> <!-- (i) is for the item id -->
+            
+            <td>
+              <button class="btn btn-danger" style="width: 70px;"> 
+                <%= link_to "Delete", i, :style=> 'color:white;', method: :delete, data: { confirm: "Are you sure you want to delete #{i.title}?"} %>
+              </button>
+            </td>
           </tr>
           <%end%>
         </tbody> 
