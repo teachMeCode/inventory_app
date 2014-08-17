@@ -21,19 +21,17 @@
           
         </div>
         <div class="col-md-2"> 
-        <div class="dropdown">
-          <a data-toggle="dropdown" href="#">Login / Sign Up <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="dlabel">
-            <li><a href="#"> <%= link_to 'Sign Up', new_user_path %></a></li>
-            <li><a href="#"> <%= link_to 'Login', new_session_path %></a></li>
-          </ul>
-          </div>
-        </div>
-         
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Login / Sign Up  <span class="caret"></span></button>
 
-        
+              <ul class="dropdown-menu" role="menu">
+                  <li><a href="#"> <%= link_to 'Sign Up', new_user_path %></a></li>
+                  <li><a href="#"> <%= link_to 'Login', new_session_path %></a></li>
+              </ul>
+            
+          </div>  
+        </div>        
       <% end %>
-
     </div> <!-- end of row -->
     <hr>
   </div> <!-- end of container     -->

@@ -17,13 +17,14 @@ class SessionsController < ApplicationController
       #redirect_to root_path # => if user exists, redirect to home page
       redirect_to items_path # => redirects to the items path
     else
-      redirect_to new_session_path  # => this is the default login page
+      redirect_to new_user_path  # => this is the default login page
+      flash[:notice] = "This email does not exist. Please sign up. Thanks!"
     end
   end
 
   def destroy
     # Kill all of our cookies
-    reset_session
+    reset_session #very important!
     redirect_to new_session_path # build a welcome page
     # redirect_to root_path # build a welcome page
   end

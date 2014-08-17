@@ -5,8 +5,18 @@
     <div class="col-md-4">
       <button type="button" class="btn btn-primary"><%= link_to "Add new Item", new_item_path, {style:"color: white;"} %></button>
     </div>
-    <div class="col-md-8">
-      <div class="alert alert-success fade in"></div>
+    <!-- flash alert -->
+    <div class="col-md-3 text-center  ">
+        <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>">
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria=hidden="true">&times;</span>
+            <span class="sr-only">Close</span> </button>
+              <%= value %>    
+        </div>
+        <% end %>
+    </div>
+    <div class="col-md-5">
     </div>
   </div> 
   <br>

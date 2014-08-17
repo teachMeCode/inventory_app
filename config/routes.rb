@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-
+  get '/about' => 'pages#about'
   
 
   # You can have the root of your site routed with "root"
