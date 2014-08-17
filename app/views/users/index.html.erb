@@ -3,16 +3,18 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-1">
     </div>
-    <div class="col-md-8">
-      <h1>Welcome to my app</h1>
-      <div> <p class="lead">Please sign in</p></div>
-      <button class="btn btn-default btn-large">
-        <%= link_to 'Sign up', new_user_path %>
-      </button>
+    <div class="col-md-10">
+      <div class="homepage">  
+        <h1>Art Tracker</h1>
+        <div> <p class="lead">Be creative, and organized!</p></div>
+        <button class="btn btn-primary btn-large pop">
+          <%= link_to 'Sign up', new_user_path, {style:"color: white;"} %>
+        </button>
+      </div>  
     </div>
-    <div class="col-md-2">
+    <div class="col-md-1">
     </div>  
     </div>
   </div>

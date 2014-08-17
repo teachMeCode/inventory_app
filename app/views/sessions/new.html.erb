@@ -6,6 +6,17 @@
     </div>
 
     <div class="col-md-4">
+      <!--alert flash-->
+      <div class="col-md-3 text-center  ">
+        <% flash.each do |key, value| %>
+          <div class="<%= flash_class(key) %>">
+            <button type="button" class="close" data-dismiss="alert">
+            <span aria=hidden="true">&times;</span>
+            <span class="sr-only">Close</span> </button>
+            <%= value %>    
+          </div>
+        <% end %>
+      </div>
       <h3>Hi. Please Login.</h3>
 
       <div class="form">

@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
     @item = current_user.items.new(params.require(:item).permit(:title, :medium, :theme, :size, :status, :location, :dt_finished))
     if @item.save
       redirect_to items_path
+      flash[:success] = "New item has been added"
     else
       render 'new'  
     end
@@ -31,8 +32,10 @@ class ItemsController < ApplicationController
   end
 
    def edit
-    if current_user && current_user == Item.find(params[:id]).user #use user because this refers to the _id in the User document
+    if current_user && current_user == Item.find(params[:id]).user #use user because this refers to the _id in the User document db (mongo)
       @item = Item.find(params[:id])
+      flash[:success] = "Items have been updated"
+      #flash[:alert] = "Alerting you to the monkey on your car!"
     else
       redirect_to items_path
     end
@@ -50,6 +53,7 @@ class ItemsController < ApplicationController
   def destroy
     Item.find(params[:id]).destroy
     redirect_to items_path
+    flash[:notice] = "Item has been deleted"
   end
   
 end #this is the end
